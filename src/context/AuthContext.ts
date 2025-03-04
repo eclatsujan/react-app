@@ -5,8 +5,8 @@ import { AuthContextType } from "../types/Auth";
 const AuthContext = createContext<AuthContextType>({
     isAuthenticated: false,
     user: null,
-    login: () => {},
-    logout: () => {},
+    setAuthData: () => {},
+    invalidateAuthData: () => {},
 });
 
 export default AuthContext;

@@ -8,12 +8,12 @@ export default function AuthProvider({children}:PropsWithChildren){
     const [user, setUser] = useState<any>(null);
 
     // 3. Define how login/logout update the context
-    const login = (userData: any) => {
+    const setAuthData = (userData: any) => {
         setIsAuthenticated(true);
         setUser(userData);
     };
 
-    const logout = () => {
+    const invalidateAuthData = () => {
         setIsAuthenticated(false);
         setUser(null);
     };
@@ -21,8 +21,8 @@ export default function AuthProvider({children}:PropsWithChildren){
     return <AuthContext.Provider value={{
         isAuthenticated,
         user,
-        login,
-        logout
+        setAuthData,
+        invalidateAuthData
     }}>
         {children}
     </AuthContext.Provider>

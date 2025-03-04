@@ -9,7 +9,7 @@ export default function ProtectedRoute({ children }: PropsWithChildren) {
   const navigate = useNavigate();
   useEffect(() => {
     if (auth.isAuthenticated === false) {
-      navigate('/signin', { replace: true });
+      navigate('/login', { replace: true });
     }
   }, [navigate, auth]);
 

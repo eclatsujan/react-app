@@ -1,12 +1,13 @@
 export type User = {
+    id: string,
     username: string,
-    token: null
+    token: null|string
 }
 
 
 export type AuthContextType = {
     isAuthenticated: boolean
     user: User|null,
-    login: (username:string, password: string) => void,
-    logout: () => void
+    setAuthData: (userData:User) => void,
+    invalidateAuthData: () => void
 };
