@@ -1,7 +1,8 @@
 export type User = {
     id: string,
-    username: string,
-    token: null|string
+    firstName: string,
+    token: null|string,
+    refreshToken: string,
 }
 
 
